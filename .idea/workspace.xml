@@ -46,7 +46,7 @@
       <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CoinRace">
+  <component name="RunManager" selected="Application.CoinTest">
     <configuration name="CoinRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinRace" />
       <module name="Serie4" />
@@ -84,11 +84,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CoinTest" />
         <item itemvalue="Application.CoinRace" />
         <item itemvalue="Application.Pig" />
         <item itemvalue="Application.TheorieAufgaben" />
         <item itemvalue="Application.PairOfDiceTest" />
-        <item itemvalue="Application.CoinTest" />
       </list>
     </recent_temporary>
   </component>

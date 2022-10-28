@@ -16,7 +16,7 @@ public class CoinTest {
         //TODO Fixen
         //Runde 1
         System.out.println("        Player 1   Player 2");
-        System.out.println("Runde 1: "+muenze1.getSide()+"     "+muenze2.getSide());
+        System.out.println("Runde 1: "+muenze1.toString()+"     "+muenze2.toString());
         muenze13[0]=muenze1.getSide();
         muenze23[0]=muenze2.getSide();
 
@@ -25,14 +25,14 @@ public class CoinTest {
         muenze13[1]=muenze1.getSide();
         muenze2.setSide(Coin.flip());
         muenze23[1]=muenze2.getSide();
-        System.out.println("Runde 2: "+muenze1.getSide()+"     "+muenze2.getSide());
+        System.out.println("Runde 2: "+muenze1.toString()+"     "+muenze2.toString());
 
         //Runde 3
         muenze1.setSide(Coin.flip());
         muenze13[2]=muenze1.getSide();
         muenze2.setSide(Coin.flip());
         muenze23[2]=muenze2.getSide();
-        System.out.println("Runde 3: "+muenze1.getSide()+"     "+muenze2.getSide());
+        System.out.println("Runde 3: "+muenze1.toString()+"     "+muenze2.toString());
 
         int laufvariable = 4;
         while(true){
@@ -57,7 +57,7 @@ public class CoinTest {
                 muenze13[2] = muenze1.getSide();
                 muenze2.setSide(Coin.flip());
                 muenze23[2] = muenze2.getSide();
-                System.out.println("Runde " + laufvariable + ": " + muenze1.getSide() + "     " + muenze2.getSide());
+                System.out.println("Runde " + laufvariable + ": " + muenze1.toString() + "     " + muenze2.toString());
                 laufvariable++;
             }
         }
