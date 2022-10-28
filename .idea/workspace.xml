@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Serie4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Coin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CoinTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="CoinTest now works">
+      <change beforePath="$PROJECT_DIR$/src/CoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoinTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +68,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666947733045</updated>
-      <workItem from="1666947734941" duration="5698000" />
+      <workItem from="1666947734941" duration="6056000" />
     </task>
+    <task id="LOCAL-00001" summary="CoinTest now works">
+      <created>1666955581253</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666955581253</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,5 +93,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CoinTest now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="CoinTest now works" />
   </component>
 </project>

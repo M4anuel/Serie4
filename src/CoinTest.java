@@ -1,7 +1,5 @@
 public class CoinTest {
     public static void main(String[] args) {
-        Coin franken = new Coin();
-        //System.out.println(franke.getSide());
         Coin euro = new Coin(false);
         Coin pound = new Coin(false);
         System.out.println(euro.equals(pound));
@@ -60,9 +58,9 @@ public class CoinTest {
                 System.out.println("Runde " + laufvariable + ": " + muenze1.getSide() + "     " + muenze2.getSide());
                 laufvariable++;
             }
-            }
-
         }
+
+    }
 
         public static boolean hasWon(boolean[] arr){
             return arr[0] == arr[1] && arr[1] == arr[2];
