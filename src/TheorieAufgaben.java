@@ -19,6 +19,8 @@ public class TheorieAufgaben {
         System.out.println(isIsosceles(3, 3, 2));
         System.out.println("Aufgabe 4 advanced");
         System.out.println(count("Manuel Flückiger", 'e'));
+        //Ich habe diese Funktion so gemacht, dass wir nach irgend einem Char filtern können.
+        //um die gewollte funktion zu haben, müsst ihr als zweiten parameter einfach 'a' schreiben anstatt hier 'e'
         System.out.println("Aufgabe 5");
         theorie5();
         System.out.println("Theorie 6");

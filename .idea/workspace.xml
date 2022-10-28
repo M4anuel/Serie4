@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="TheorieAufgaben erweitert, Pig Klasse erstellt">
-      <change afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="TheorieAufgaben gelösst">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PairOfDiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PairOfDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
       <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TheorieAufgaben">
+  <component name="RunManager" selected="Application.Pig">
     <configuration name="CoinTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinTest" />
       <module name="Serie4" />
@@ -62,6 +62,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Pig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Pig" />
+      <module name="Serie4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TheorieAufgaben" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TheorieAufgaben" />
       <module name="Serie4" />
@@ -71,6 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Pig" />
         <item itemvalue="Application.TheorieAufgaben" />
         <item itemvalue="Application.PairOfDiceTest" />
         <item itemvalue="Application.CoinTest" />
@@ -86,7 +94,9 @@
       <option name="presentableId" value="Default" />
       <updated>1666947733045</updated>
       <workItem from="1666947734941" duration="8364000" />
-      <workItem from="1666958430078" duration="1447000" />
+      <workItem from="1666958430078" duration="4506000" />
+      <workItem from="1666966121573" duration="1049000" />
+      <workItem from="1666986177718" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -109,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666957564939</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TheorieAufgaben gelösst">
+      <created>1666960841661</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666960841661</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +148,7 @@
     <MESSAGE value="CoinTest now proper indent (big fix)" />
     <MESSAGE value="TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung..." />
     <MESSAGE value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
-    <option name="LAST_COMMIT_MESSAGE" value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
+    <MESSAGE value="TheorieAufgaben gelösst" />
+    <option name="LAST_COMMIT_MESSAGE" value="TheorieAufgaben gelösst" />
   </component>
 </project>

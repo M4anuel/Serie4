@@ -12,6 +12,9 @@ public class PairOfDice {
     public int getPoints(){
         return dice1.getPoints()+ dice2.getPoints();
     }
+    public boolean isOne(){
+        return dice1.getPoints()==1||dice2.getPoints()==1;
+    }
     public Dice getDice1() {
         return dice1;
     }
