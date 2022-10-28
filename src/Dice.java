@@ -1,20 +1,18 @@
-package serie04;
-
 import java.util.Random;
 
 public class Dice {
 
-	// maximale Punktezahl des Würfels
+	// maximale Punktezahl des Wrfels
 	public final int MAX = 6;
 
-	// aktuelle Punktezahl des Würfels
+	// aktuelle Punktezahl des Wrfels
 	private int points;
 
 	// Objekt zur Erzeugung von Zufallszahlen
 	private Random randomGenerator;
 
 	/**
-	 * instanziiert einen neuen Würfel und initialisiert die Variablen
+	 * instanziiert einen neuen Wrfel und initialisiert die Variablen
 	 */
 	public Dice() {
 		this.randomGenerator = new Random();
@@ -22,7 +20,7 @@ public class Dice {
 	}
 
 	/**
-	 * "wirft" den Würfel (setzt die Punktezahl auf eine zufällige, gültige Zahl)
+	 * "wirft" den Wrfel (setzt die Punktezahl auf eine zufllige, gltige Zahl)
 	 */
 	public int roll() {
 		this.points = this.randomGenerator.nextInt(MAX) + 1;
@@ -30,17 +28,17 @@ public class Dice {
 	}
 
 	/**
-	 * setzt die aktuelle Punktezahl des Würfels auf den übergebenen Wert
+	 * setzt die aktuelle Punktezahl des Wrfels auf den bergebenen Wert
 	 */
 	public void setPoints(int points) {
 		if (points >= 1 && points <= MAX)
 			this.points = points;
 		else
-			this.printMessage("Unzulässige Eingabe. " + "Würfel wird nicht verändert.");
+			this.printMessage("Unzulssige Eingabe. " + "Wrfel wird nicht verndert.");
 	}
 
 	/**
-	 * gibt die aktuelle Punktezahl des Würfels zurück
+	 * gibt die aktuelle Punktezahl des Wrfels zurck
 	 */
 	public int getPoints() {
 		return this.points;
