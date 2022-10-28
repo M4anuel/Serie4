@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="CoinTest now proper indent (big fix)">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PairOfDiceTest.java" afterDir="false" />
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="TheorieAufgaben erweitert, Pig Klasse erstellt">
+      <change afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PairOfDiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,18 +31,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/manue/OneDrive/Dokumente/_Uni/Informatik/Programmieren1",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/manue/OneDrive/Dokumente/_Uni/Informatik/Programmieren1/Serie4/src&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.PairOfDiceTest">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TheorieAufgaben">
     <configuration name="CoinTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinTest" />
       <module name="Serie4" />
@@ -70,8 +71,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PairOfDiceTest" />
         <item itemvalue="Application.TheorieAufgaben" />
+        <item itemvalue="Application.PairOfDiceTest" />
         <item itemvalue="Application.CoinTest" />
       </list>
     </recent_temporary>
@@ -84,7 +85,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666947733045</updated>
-      <workItem from="1666947734941" duration="7499000" />
+      <workItem from="1666947734941" duration="8364000" />
+      <workItem from="1666958430078" duration="1447000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -100,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666955931542</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung...">
+      <created>1666957564939</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666957564939</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +129,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CoinTest now works" />
     <MESSAGE value="CoinTest now proper indent (big fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="CoinTest now proper indent (big fix)" />
+    <MESSAGE value="TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung..." />
+    <MESSAGE value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
+    <option name="LAST_COMMIT_MESSAGE" value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
   </component>
 </project>
