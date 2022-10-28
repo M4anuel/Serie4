@@ -25,12 +25,7 @@ public class Coin {
     }
     @Override
     public String toString(){
-        if (this.side == false){
-            return "Tails";
-        }
-        else {
-            return "Head";
-        }
+        return side ? "Kopf" : "Zahl";
     }
 
     public static boolean flip(){

@@ -11,7 +11,9 @@ public class CoinTest {
         Coin muenze2 = new Coin();
         boolean[] muenze13 = new boolean[3];
         boolean[] muenze23 = new boolean[3];
-
+        //ACHTUNG METHODE FALSCH sie schaut ob Kopf ODER Zahl 3 mal hintereinander vorkommt, in der Aufgabe muss man nur
+        //nach Kopf filtern
+        //TODO Fixen
         //Runde 1
         System.out.println("        Player 1   Player 2");
         System.out.println("Runde 1: "+muenze1.getSide()+"     "+muenze2.getSide());
