@@ -1,3 +1,5 @@
+//Abdihakin Sahal Omar 20-947-107
+//Manuel Flückiger 22-112-502
 import java.util.Random;
 
 public class Coin {

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="TheorieAufgaben gelösst">
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert">
+      <change afterPath="$PROJECT_DIR$/src/CoinRace.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoinTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PairOfDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PairOfDiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +52,7 @@
       <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CoinTest">
+  <component name="RunManager" selected="Application.Pig">
     <configuration name="CoinRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinRace" />
       <module name="Serie4" />
@@ -56,13 +62,6 @@
     </configuration>
     <configuration name="CoinTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinTest" />
-      <module name="Serie4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PairOfDiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PairOfDiceTest" />
       <module name="Serie4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,13 +81,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="quiz" />
+      <module name="Serie4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Pig" />
         <item itemvalue="Application.CoinTest" />
         <item itemvalue="Application.CoinRace" />
-        <item itemvalue="Application.Pig" />
+        <item itemvalue="Application.quiz" />
         <item itemvalue="Application.TheorieAufgaben" />
-        <item itemvalue="Application.PairOfDiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +110,10 @@
       <workItem from="1666958430078" duration="4506000" />
       <workItem from="1666966121573" duration="1049000" />
       <workItem from="1666986177718" duration="330000" />
-      <workItem from="1666994502369" duration="1540000" />
+      <workItem from="1666994502369" duration="1712000" />
+      <workItem from="1667037077550" duration="257000" />
+      <workItem from="1667198006694" duration="1287000" />
+      <workItem from="1667200073367" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -134,7 +143,28 @@
       <option name="project" value="LOCAL" />
       <updated>1666960841661</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Missverständnis der Implementation 1! wird verbessert">
+      <created>1666996128773</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666996128773</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert">
+      <created>1666996214151</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666996214151</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert">
+      <created>1667200100525</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667200100525</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +187,9 @@
     <MESSAGE value="TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung..." />
     <MESSAGE value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
     <MESSAGE value="TheorieAufgaben gelösst" />
-    <option name="LAST_COMMIT_MESSAGE" value="TheorieAufgaben gelösst" />
+    <MESSAGE value="Missverständnis der Implementation 1! wird verbessert" />
+    <MESSAGE value="CoinRace gefixt, eigene Klasse dafür gemacht.&#10;isOne Methode von Klasse PairOfDice zu Pig bewegt.&#10;kleine weitere updates zu pig" />
+    <MESSAGE value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
   </component>
 </project>

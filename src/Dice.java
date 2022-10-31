@@ -1,18 +1,20 @@
+//Abdihakin Sahal Omar 20-947-107
+//Manuel Flückiger 22-112-502
 import java.util.Random;
 
 public class Dice {
 
-	// maximale Punktezahl des Wrfels
+	// maximale Punktezahl des Wuerfels
 	public final int MAX = 6;
 
-	// aktuelle Punktezahl des Wrfels
+	// aktuelle Punktezahl des Wuerfels
 	private int points;
 
 	// Objekt zur Erzeugung von Zufallszahlen
-	private Random randomGenerator;
+	private final Random randomGenerator;
 
 	/**
-	 * instanziiert einen neuen Wrfel und initialisiert die Variablen
+	 * instanziiert einen neuen Wuerfel und initialisiert die Variablen
 	 */
 	public Dice() {
 		this.randomGenerator = new Random();
@@ -20,7 +22,7 @@ public class Dice {
 	}
 
 	/**
-	 * "wirft" den Wrfel (setzt die Punktezahl auf eine zufllige, gltige Zahl)
+	 * "wirft" den Wuerfel (setzt die Punktezahl auf eine zufaellige, gluetige Zahl)
 	 */
 	public int roll() {
 		this.points = this.randomGenerator.nextInt(MAX) + 1;
@@ -28,7 +30,7 @@ public class Dice {
 	}
 
 	/**
-	 * setzt die aktuelle Punktezahl des Wrfels auf den bergebenen Wert
+	 * setzt die aktuelle Punktezahl des Wuerfels auf den bergebenen Wert
 	 */
 	public void setPoints(int points) {
 		if (points >= 1 && points <= MAX)
@@ -38,7 +40,7 @@ public class Dice {
 	}
 
 	/**
-	 * gibt die aktuelle Punktezahl des Wrfels zurck
+	 * gibt die aktuelle Punktezahl des Wuerfels zurueck
 	 */
 	public int getPoints() {
 		return this.points;

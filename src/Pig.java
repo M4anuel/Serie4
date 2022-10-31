@@ -1,4 +1,5 @@
-import java.util.Objects;
+//Abdihakin Sahal Omar 20-947-107
+//Manuel Flückiger 22-112-502
 import java.util.Scanner;
 
 public class Pig {
@@ -18,15 +19,16 @@ public class Pig {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Will Spieler 1 würfeln? (y/n)");
 
-        while(a<100 || b<100){
+        while(a<20 || b<20){
             if (!player){
                 dices.throwDice();
                 answer = scanner.next();
                 if (answer.equals("y")){
                     dices.throwDice();
                     System.out.println("Spieler 1 hat "+ dices.getPoints()+" gewürfelt");
-                    if (dices.isOne()){
+                    if (isOne(dices)){
                         System.out.println("aber dabei eine Eins gewürfelt");
+                        System.out.println("Spieler 2 zum Würfeln y eingeben");
                         temp = 0;
                         player = true;
                     }
@@ -38,6 +40,7 @@ public class Pig {
                 }
                 else if (answer.equals("n")){
                     a+=temp;
+                    temp=0;
                     System.out.println("Spieler 1 hat jetzt "+a+" Punkte.");
                     System.out.println("Spieler 2, willst du würfeln? (y/n)");
                     player = true;
@@ -49,9 +52,9 @@ public class Pig {
                 if (answer.equals("y")){
                     dices.throwDice();
                     System.out.println("Spieler 2 hat "+ dices.getPoints()+" gewürfelt");
-                    if (dices.isOne()){
+                    if (isOne(dices)){
                         System.out.println("aber dabei eine Eins gewürfelt");
-                        System.out.println("Spieler 2:");
+                        System.out.println("Spieler 1 zum würfeln y eingeben");
                         temp = 0;
                         player = false;
                     }
@@ -63,11 +66,15 @@ public class Pig {
                 }
                 else if (answer.equals("n")){
                     a+=temp;
+                    temp=0;
                     System.out.println("Spieler 2 hat jetzt "+b+" Punkte.");
                     System.out.println("Spieler 1, willst du würfeln? (y/n)");
                     player = false;
                 }
             }
         }
+    }
+    public static boolean isOne(PairOfDice p){
+        return p.getDice1().getPoints() == 1 || p.getDice2().getPoints() == 1;
     }
 }

@@ -1,3 +1,10 @@
+//Abdihakin Sahal Omar 20-947-107
+//Manuel Flückiger 22-112-502
+
+/*
+--DefinierenSie Methoden zum Setzen und Auslesen der Punkte der einzelnen Würfel--
+da kann man einfach nameDice.getDice1.getPoints() oder nameDice.getDice2.getPoints() machen, wie ich in der Pig Klasse...
+ */
 public class PairOfDice {
     private Dice dice1, dice2;
 
@@ -11,9 +18,6 @@ public class PairOfDice {
     }
     public int getPoints(){
         return dice1.getPoints()+ dice2.getPoints();
-    }
-    public boolean isOne(){
-        return dice1.getPoints()==1||dice2.getPoints()==1;
     }
     public Dice getDice1() {
         return dice1;
