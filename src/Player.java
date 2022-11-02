@@ -28,10 +28,10 @@ public class Player {
      */
     public void turn(PairOfDice dices, boolean isComputer){
         if (!isComputer) {
-            this.addPoints(piggyBack(this, dices));
+            this.addPoints(piggyBack(dices));
         }
         else {
-            this.addPoints(piggyBackComputer(this,dices));
+            this.addPoints(piggyBackComputer(dices));
         }
     }
     /**
@@ -40,17 +40,17 @@ public class Player {
      * entweder wird die Summe der akkumulierten Punkte auf den Würfeln zurückgegeben, oder 0, falls eine 1 gewürfelt wurde.
      */
 
-    public int piggyBack(Player p, PairOfDice dices){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
-        System.out.println(p.getName()+" ist dran. Du hast "+p.getPoints()+" Punkte. Möchtest du würfeln? (y/n)");
+    public int piggyBack(PairOfDice dices){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
+        System.out.println(this.getName()+" ist dran. Du hast "+this.getPoints()+" Punkte. Möchtest du würfeln? (y/n)");
         int temp = 0;
         Scanner scanner = new Scanner(System.in);
         while(Objects.equals(scanner.next(),"y")){
             dices.throwDice();
             temp += dices.getPoints();
-            System.out.println(p.getName()+" hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(p.getPoints()+temp)+" Punkte");
+            System.out.println(this.getName()+" hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
             if(areOnes(dices)){//erste lose-Bedingung
                 System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
-                p.setPoints(0);
+                this.setPoints(0);
                 return 0;
             }
             else if(isOne(dices)){//zweite lose-Bedingung
@@ -61,7 +61,7 @@ public class Player {
         }
         //Sollte der User input etwas anderes als "y" sein, müsste es n sein. aber falls der Benutzer aus Versehen
         //irgendetwas eingibt, wollen wir nicht, dass das Programm abstürzt, deswegen kommt einfach der andere Spieler dran
-        System.out.println(p.getName()+" hat damit jetzt "+(p.getPoints()+temp)+" Punkte");
+        System.out.println(this.getName()+" hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
         return temp;
     }
 
@@ -70,16 +70,16 @@ public class Player {
      * damit der Spieler weiss, was abgeht, wird es in der Konsole dokumentiert.
      * Auch hier wird die Summe oder 0 zurückgegeben, jenachdem, ob eine 1 gewürfelt wurde bevor die Summe >20 ist.
      */
-    public int piggyBackComputer(Player p, PairOfDice dices){//Computer spezifische Methode, könnte man noch mit der oberen Methode verschmelzen
-        System.out.println("Der Computer ist dran. Er hat "+p.getPoints()+" Punkte.");
+    public int piggyBackComputer(PairOfDice dices){//Computer spezifische Methode, könnte man noch mit der oberen Methode verschmelzen
+        System.out.println("Der Computer ist dran. Er hat "+this.getPoints()+" Punkte.");
         int temp = 0;
         while(temp<20){
             dices.throwDice();
             temp += dices.getPoints();
-            System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+p.getPoints()+temp+" Punkte");
+            System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+this.getPoints()+temp+" Punkte");
             if(areOnes(dices)){
                 System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
-                p.setPoints(0);
+                this.setPoints(0);
                 return 0;
             }
             else if(isOne(dices)){
@@ -88,7 +88,7 @@ public class Player {
             }
             Pig.sleep( 0.5);//Simulation, als würde der Computer entscheiden + man sieht besser was passiert
         }
-        System.out.println("Der Computer hat damit jetzt "+(p.getPoints()+temp)+" Punkte");
+        System.out.println("Der Computer hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
         return temp;
     }
 
