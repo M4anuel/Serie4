@@ -33,6 +33,7 @@ public class Player {
      * sollte der Player ein "echter" Spieler sein, muss dieser sagen, ob er würfeln möchte oder nicht.
      * Dies kann er so lange entscheiden, bis er entweder "n" sagt oder eine oder zwei Einsen würfelt.
      * entweder wird die Summe der akkumulierten Punkte auf den Würfeln zurückgegeben, oder 0, falls eine 1 gewürfelt wurde.
+     * der "Computer" würfelt dabei immer bis er >=20 Punkte hat, oder er eine oder zwei einsen gewürfelt hat
      */
 
     public int piggyBack(PairOfDice dices, boolean isComputer){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
