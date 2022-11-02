@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert">
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig sollte jetzt gehen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
     </list>
@@ -75,8 +74,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="quiz" />
+    <configuration name="TestPig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestPig" />
       <module name="Serie4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,10 +84,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Pig" />
+        <item itemvalue="Application.TestPig" />
         <item itemvalue="Application.PigGame" />
         <item itemvalue="Application.CoinTest" />
         <item itemvalue="Application.CoinRace" />
-        <item itemvalue="Application.quiz" />
       </list>
     </recent_temporary>
   </component>
@@ -109,6 +108,9 @@
       <workItem from="1667198006694" duration="1287000" />
       <workItem from="1667200073367" duration="3191000" />
       <workItem from="1667208419526" duration="3763000" />
+      <workItem from="1667212234755" duration="48000" />
+      <workItem from="1667372880023" duration="433000" />
+      <workItem from="1667376031661" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -166,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667204077620</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Pig Spiel geht nicht&#10;Player ist Hilfsklasse für dieses Spiel">
+      <created>1667212275956</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212275956</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,17 +201,8 @@
     <MESSAGE value="Missverständnis der Implementation 1! wird verbessert" />
     <MESSAGE value="CoinRace gefixt, eigene Klasse dafür gemacht.&#10;isOne Methode von Klasse PairOfDice zu Pig bewegt.&#10;kleine weitere updates zu pig" />
     <MESSAGE value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Pig.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Pig Spiel geht nicht&#10;Player ist Hilfsklasse für dieses Spiel" />
+    <MESSAGE value="Pig sollte jetzt gehen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pig sollte jetzt gehen" />
   </component>
 </project>
