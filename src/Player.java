@@ -28,10 +28,10 @@ public class Player {
      */
     public void turn(PairOfDice dices, boolean isComputer){
         if (!isComputer) {
-            this.addPoints(piggyBack(dices));
+            this.addPoints(this.piggyBack(dices, false));
         }
         else {
-            this.addPoints(piggyBackComputer(dices));
+            this.addPoints(this.piggyBack(dices, true));
         }
     }
     /**
@@ -40,56 +40,50 @@ public class Player {
      * entweder wird die Summe der akkumulierten Punkte auf den Würfeln zurückgegeben, oder 0, falls eine 1 gewürfelt wurde.
      */
 
-    public int piggyBack(PairOfDice dices){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
-        System.out.println(this.getName()+" ist dran. Du hast "+this.getPoints()+" Punkte. Möchtest du würfeln? (y/n)");
+    public int piggyBack(PairOfDice dices, boolean isComputer){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
         int temp = 0;
-        Scanner scanner = new Scanner(System.in);
-        while(Objects.equals(scanner.next(),"y")){
-            dices.throwDice();
-            temp += dices.getPoints();
-            System.out.println(this.getName()+" hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
-            if(areOnes(dices)){//erste lose-Bedingung
-                System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
-                this.setPoints(0);
-                return 0;
+        if (!isComputer){
+            System.out.println(this.getName()+" ist dran. Du hast "+this.getPoints()+" Punkte. Möchtest du würfeln? (y/n)");
+            Scanner scanner = new Scanner(System.in);
+            while(Objects.equals(scanner.next(),"y")){
+                dices.throwDice();
+                temp += dices.getPoints();
+                System.out.println(this.getName()+" hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
+                if (play(dices)){
+                    return 0;
+                }
+                System.out.println("weiterwürfeln? (y/n)");
             }
-            else if(isOne(dices)){//zweite lose-Bedingung
-                System.out.println("aber dabei eine Eins gewürfelt");
-                return 0;
-            }
-            System.out.println("weiterwürfeln? (y/n)");
+            //Sollte der User input etwas anderes als "y" sein, müsste es n sein. aber falls der Benutzer aus Versehen
+            //irgendetwas eingibt, wollen wir nicht, dass das Programm abstürzt, deswegen kommt einfach der andere Spieler dran
+            System.out.println(this.getName()+" hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
         }
-        //Sollte der User input etwas anderes als "y" sein, müsste es n sein. aber falls der Benutzer aus Versehen
-        //irgendetwas eingibt, wollen wir nicht, dass das Programm abstürzt, deswegen kommt einfach der andere Spieler dran
-        System.out.println(this.getName()+" hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
+        else {
+            System.out.println("Der Computer ist dran. Er hat "+this.getPoints()+" Punkte.");
+            while(temp<20){
+                dices.throwDice();
+                temp += dices.getPoints();
+                System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
+                if (play(dices)){
+                    return 0;
+                }
+                Pig.sleep( 0.5);//Simulation, als würde der Computer entscheiden + man sieht besser was passiert
+            }
+            System.out.println("Der Computer hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
+        }
         return temp;
     }
-
-    /**
-     * Sollte der Player ein "Computer" sein, soll er, laut Aufgabe, solange "würfeln", bis die Summe >20 ist.
-     * damit der Spieler weiss, was abgeht, wird es in der Konsole dokumentiert.
-     * Auch hier wird die Summe oder 0 zurückgegeben, jenachdem, ob eine 1 gewürfelt wurde bevor die Summe >20 ist.
-     */
-    public int piggyBackComputer(PairOfDice dices){//Computer spezifische Methode, könnte man noch mit der oberen Methode verschmelzen
-        System.out.println("Der Computer ist dran. Er hat "+this.getPoints()+" Punkte.");
-        int temp = 0;
-        while(temp<20){
-            dices.throwDice();
-            temp += dices.getPoints();
-            System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
-            if(areOnes(dices)){
-                System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
-                this.setPoints(0);
-                return 0;
-            }
-            else if(isOne(dices)){
-                System.out.println("aber dabei eine Eins gewürfelt");
-                return 0;
-            }
-            Pig.sleep( 0.5);//Simulation, als würde der Computer entscheiden + man sieht besser was passiert
+    private boolean play(PairOfDice dices){
+        if(areOnes(dices)){
+            System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
+            this.setPoints(0);
+            return true;
         }
-        System.out.println("Der Computer hat damit jetzt "+(this.getPoints()+temp)+" Punkte");
-        return temp;
+        else if(isOne(dices)){
+            System.out.println("aber dabei eine Eins gewürfelt");
+            return true;
+        }
+        else return false;
     }
 
     /**

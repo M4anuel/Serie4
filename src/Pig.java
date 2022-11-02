@@ -57,10 +57,10 @@ public class Pig {
             sleep(1);
         }
         if (player1.getPoints()<player2.getPoints()){
-            System.out.println(player1.getName()+" hat gewonnen");
+            System.out.println(player2.getName()+" hat gewonnen");
         }
         else {
-            System.out.println(player2.getName()+" hat gewonnen");
+            System.out.println(player1.getName()+" hat gewonnen");
         }
     }
 
