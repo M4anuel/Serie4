@@ -1,6 +1,6 @@
 import java.util.Objects;
 import java.util.Scanner;
-
+//Hilfsklasse zum Pig Game
 public class Player {
     //Name des Spielers
     private String name;
@@ -73,6 +73,10 @@ public class Player {
         }
         return temp;
     }
+
+    /**
+     * Methode schaut, ob eine oder 2 Einsen gewürfelt wurden, und handelt dementsprechend
+     */
     private boolean play(PairOfDice dices){
         if(areOnes(dices)){
             System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
