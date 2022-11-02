@@ -2,17 +2,30 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Player {
+    //Name des Spielers
     private String name;
+    //Akkumulierte Punktzahl des Spielers
     private int points = 0;
 
-    public Player(String name, int points){//debug Methode
-        this.name = name;
-        this.points = points;
-    }
+    /**
+     *instanziiert einen neuen Spieler und initialisiert den Namen
+     */
+
     public Player(String name){
         this.name = name;
     }
+    /**
+     *instanziiert einen neuen Spieler und initialisiert den Namen und die Punktzahl
+     * -> Debug Konstruktor
+     */
+    public Player(String name, int points){
+        this.name = name;
+        this.points = points;
+    }
 
+    /**
+     * simuliert Zug eines spielers und wendet je nachdem, ob es ein Computer ist oder nicht, die passende Methode an
+     */
     public void turn(PairOfDice dices, boolean isComputer){
         if (!isComputer) {
             this.addPoints(piggyBack(this, dices));
@@ -21,6 +34,11 @@ public class Player {
             this.addPoints(piggyBackComputer(this,dices));
         }
     }
+    /**
+     * sollte der Player ein "echter" Spieler sein, muss dieser sagen, ob er würfeln möchte oder nicht.
+     * Dies kann er so lange entscheiden, bis er entweder "n" sagt oder eine oder zwei Einsen würfelt.
+     * entweder wird die Summe der akkumulierten Punkte auf den Würfeln zurückgegeben, oder 0, falls eine 1 gewürfelt wurde.
+     */
 
     public int piggyBack(Player p, PairOfDice dices){//Methodenname hat irgendwo mit dem Namen des Spiels zu tun
         System.out.println(p.getName()+" ist dran. Du hast "+p.getPoints()+" Punkte. Möchtest du würfeln? (y/n)");
@@ -47,7 +65,12 @@ public class Player {
         return temp;
     }
 
-    public int piggyBackComputer(Player p, PairOfDice dices){//Computer spezifische Methode, könnte man sicher noch einfacher machen
+    /**
+     * Sollte der Player ein "Computer" sein, soll er, laut Aufgabe, solange "würfeln", bis die Summe >20 ist.
+     * damit der Spieler weiss, was abgeht, wird es in der Konsole dokumentiert.
+     * Auch hier wird die Summe oder 0 zurückgegeben, jenachdem, ob eine 1 gewürfelt wurde bevor die Summe >20 ist.
+     */
+    public int piggyBackComputer(Player p, PairOfDice dices){//Computer spezifische Methode, könnte man noch mit der oberen Methode verschmelzen
         System.out.println("Der Computer ist dran. Er hat "+p.getPoints()+" Punkte.");
         int temp = 0;
         while(temp<20){
@@ -68,7 +91,14 @@ public class Player {
         System.out.println("Der Computer hat damit jetzt "+(p.getPoints()+temp)+" Punkte");
         return temp;
     }
+
+    /**
+     * überprüft, ob einer der Würfel eine 1 ist
+     */
     public boolean isOne(PairOfDice p){return p.getDice1().getPoints() == 1 || p.getDice2().getPoints() == 1;}
+    /**
+     * überprüft, ob beide Würfel eine 1 sind
+     */
     public boolean areOnes(PairOfDice p){return p.getDice1().getPoints() == 1 && p.getDice2().getPoints() == 1;}
 
     //Getter und Setter Methoden

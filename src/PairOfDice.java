@@ -2,20 +2,29 @@
 //Manuel Flückiger 22-112-502
 
 /*
---DefinierenSie Methoden zum Setzen und Auslesen der Punkte der einzelnen Würfel--
+--Definieren Sie Methoden zum Setzen und Auslesen der Punkte der einzelnen Würfel--
 da kann man einfach nameDice.getDice1.getPoints() oder nameDice.getDice2.getPoints() machen, wie ich in der Pig Klasse...
  */
 public class PairOfDice {
+    //Objekte zum Erzeugen der Würfel
     private Dice dice1, dice2;
 
+    /**
+     *instanziiert ein neues PairOfDice und initialisiert die Würfel als neue Würfel
+     */
     public PairOfDice(){
         this.dice1 = new Dice();
         this.dice2 = new Dice();
     }
+
+    /**
+     * Simuliert ein Würfelwurf
+     */
     public void throwDice(){
         dice1.roll();
         dice2.roll();
     }
+    //Getter und Setter Methoden
     public int getPoints(){
         return dice1.getPoints()+ dice2.getPoints();
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus">
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig ist mehr nach Java Konvention geschrieben">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PairOfDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,7 @@
       <workItem from="1667372880023" duration="433000" />
       <workItem from="1667376031661" duration="1576000" />
       <workItem from="1667383604693" duration="339000" />
-      <workItem from="1667384106261" duration="6156000" />
+      <workItem from="1667384106261" duration="7892000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667387557419</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Pig ist mehr nach Java Konvention geschrieben">
+      <created>1667390558526</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667390558526</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +237,7 @@
     <MESSAGE value="Pig sollte jetzt gehen" />
     <MESSAGE value="Pig geht" />
     <MESSAGE value="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus" />
+    <MESSAGE value="Pig ist mehr nach Java Konvention geschrieben" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pig ist mehr nach Java Konvention geschrieben" />
   </component>
 </project>

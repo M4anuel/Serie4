@@ -17,29 +17,37 @@ public class Pig {
                 "verliert der Spieler alle bisher gesammelten Punkte" +
                 "\nMöchtest du im Ein- oder Zweispielermodus spielen? (e/z)");
         Scanner scanner = new Scanner(System.in);
-        PairOfDice dices = new PairOfDice();
 
         if (Objects.equals(scanner.next(), "z")){
             System.out.println("Wie soll Spieler 1 heissen?");
             Player player1 = new Player(scanner.next());
             System.out.println("Wie soll Spieler 2 heissen?");
             Player player2 = new Player(scanner.next());
-            pig(player1, player2, MAX_POINTS, dices);
+            pig(player1, player2, MAX_POINTS);
         }
         else{
             System.out.println("Wie soll Spieler 1 heissen?");
             Player player1 = new Player(scanner.next());
             Player player2 = new Player("Computer");
-            pig(player1, player2, MAX_POINTS, dices);
+            pig(player1, player2, MAX_POINTS);
         }
 
     }
-    public static void pig(Player player1, Player player2, int MAX_POINTS, PairOfDice dices){
+
+    /**
+     * nimmt als Parameter:
+     * zwei Player, einer davon möglicherweise ein Computer
+     * eine maximale Punktzahl, um die Gewinnbedingung des Spiels anpassen zu können
+     * der Gameloop läuft, bis die Gewinnbedingung, gesetzt durch die maximale Punktzahl,
+     * erreicht wird. danach wird der Gewinner bekannt gegeben
+     */
+    public static void pig(Player player1, Player player2, int MAX_POINTS){
+        PairOfDice dices = new PairOfDice();
         while((player2.getPoints() <MAX_POINTS)&&(player1.getPoints() <MAX_POINTS)) {
             player1.turn(dices,false);
             sleep(1);//taktische sleeps, damit das Spiel nicht zu schnell angezeigt wird und overwhelming scheint
             //Player 1 ist immer ein Mensch, nur Player 2 braucht checks, ob es ein Computer ist. ("Bug") wenn
-            //Player 2 als Namen Computer nimmt, wird er nicht spielen können, aber dann ist er auch dumm :)
+            //Player 2 als Namen Computer nimmt, wird er nicht spielen können, aber dann ist er auch nervig und auf bughunt :)
 
             if (Objects.equals(player2.getName(), "Computer")) { //überall Objects.equals um Null-safe zu sein
                 player2.turn(dices,true);
@@ -55,9 +63,13 @@ public class Pig {
             System.out.println(player2.getName()+" hat gewonnen");
         }
     }
+
+    /**
+     * nimmt als Parameter Sekunden und pausiert das Programm für so lange
+     */
     public static void sleep(double sec){
         try {
-            Thread.sleep((long) (sec*1000));//wartet sec lange bis das Program weiter ausgeführt wird
+            Thread.sleep((long) (sec*1000));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
