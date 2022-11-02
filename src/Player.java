@@ -1,10 +1,13 @@
 public class Player {
     private String name;
-    private int points;
+    private int points = 0;
 
-    public Player(String name, int points){
+    public Player(String name, int points){//debug Methode
         this.name = name;
         this.points = points;
+    }
+    public Player(String name){
+        this.name = name;
     }
 
     public String getName() {
