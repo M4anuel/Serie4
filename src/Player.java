@@ -76,7 +76,7 @@ public class Player {
         while(temp<20){
             dices.throwDice();
             temp += dices.getPoints();
-            System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+this.getPoints()+temp+" Punkte");
+            System.out.println("der Computer hat "+ dices.getPoints() +" gewürfelt und hätte damit "+(this.getPoints()+temp)+" Punkte");
             if(areOnes(dices)){
                 System.out.println("aber dabei zwei Einsen gewürfelt und so alle Punkte verloren...");
                 this.setPoints(0);

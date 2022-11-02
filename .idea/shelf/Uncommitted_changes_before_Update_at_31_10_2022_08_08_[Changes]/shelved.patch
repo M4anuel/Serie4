@@ -1,0 +1,496 @@
+Index: src/TheorieAufgaben.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class TheorieAufgaben {\r\n    public static void main(String[] args) {\r\n\r\n        //alle zum durchprobieren...\r\n        System.out.println(\"Aufgabe 1\");\r\n        System.out.print(\"a)\");\r\n        theorie1(5, 4);\r\n        System.out.print(\"\\nb)\");\r\n        theorie1(8, 4);\r\n        System.out.print(\"\\nc)\");\r\n        theorie1(10, 11);\r\n        System.out.print(\"\\nd)\");\r\n        theorie1(10, 12);\r\n        System.out.println(\"\\ne)\");\r\n        theorie1(10, 13);\r\n        System.out.println(\"Aufgabe 2\");\r\n        System.out.println(gregorianYear(400));\r\n        System.out.println(\"\\nAufgabe 3\");\r\n        System.out.println(isIsosceles(3, 3, 2));\r\n        System.out.println(\"Aufgabe 4 advanced\");\r\n        System.out.println(count(\"Manuel Flückiger\", 'e'));\r\n        //Ich habe diese Funktion so gemacht, dass wir nach irgend einem Char filtern können.\r\n        //um die gewollte funktion zu haben, müsst ihr als zweiten parameter einfach 'a' schreiben anstatt hier 'e'\r\n        System.out.println(\"Aufgabe 5\");\r\n        theorie5();\r\n        System.out.println(\"Theorie 6\");\r\n        theorie6();\r\n        System.out.println(\"Theorie 7\");\r\n        theorie7();\r\n\r\n    }\r\n    public static void theorie1(int num1, int num2){\r\n        if (num1 >= num2) {\r\n            System.out.print(\"1 \");\r\n            System.out.print(\"2 \");\r\n            num1 = num2 - 1;\r\n        }\r\n        System.out.print(\"3 \");\r\n        if ((num1 + 1) >= num2) System.out.print(\"4 \");\r\n        else if ((num1 + 2) >= num2) {\r\n            System.out.print(\"5 \");\r\n            System.out.print(\"6 \");\r\n        }\r\n        else {\r\n            System.out.print(\"7 \");\r\n            System.out.print(\"8 \");\r\n        }\r\n    }\r\n    public static boolean isIsosceles(int x, int y, int z){\r\n        return (!(x == y && y == z ) && (x == y || y == z || z == x ));\r\n    }\r\n    public static boolean gregorianYear(int year){\r\n        return (year%4==0&&(year%100!=0||year%400==0));\r\n    }\r\n    public static int count(String name, char c){\r\n        return name.length()==0 ? 0 : (name.charAt(0)==c ? 1 : 0) + count(name.substring(1),c);\r\n    }\r\n    public static void theorie5(){\r\n        int low = 0, high = 5;do {\r\n            System.out.println(low);\r\n            low++;\r\n        } while (low < high);\r\n    }\r\n    public static void theorie6(){\r\n        for (int i = 1; i <= 3; i++) {\r\n            for (int j = i; j > 0; j--)\r\n                System.out.println(i + \" \" + j);\r\n        }\r\n    }\r\n    public static void theorie7(){\r\n        int value = 0;\r\n        int num = 10;\r\n        while(num<=40){\r\n            value+=num;\r\n            num+=10;\r\n        }\r\n        System.out.println(value);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/TheorieAufgaben.java b/src/TheorieAufgaben.java
+--- a/src/TheorieAufgaben.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/TheorieAufgaben.java	(date 1667198541296)
+@@ -1,3 +1,5 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ public class TheorieAufgaben {
+     public static void main(String[] args) {
+ 
+Index: src/Pig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Objects;\r\nimport java.util.Scanner;\r\n\r\npublic class Pig {\r\n    public static void main(String[] args) {\r\n        System.out.println(\"Spielregeln:\\n Spieler sind abwechselnd dran, beginnend mit Spieler 1. \\n\" +\r\n                \"Das Ziel ist 100 Punkte zu erreichen. \\n\" +\r\n                \"Dabei kann jeder Spieler in sinem Spielzug entscheiden ob er weiterspielen möchte,\" +\r\n                \" indem er y oder n in die Konsole eingibt.\\n Dabei werden gewürfelte Punkte akkumuliert.\" +\r\n                \" Sollte eine 1 gewürfelt werden, sind \" +\r\n                \"alle, in dem Zug gewonnenen Punkte, verloren.\");\r\n        int a, b;\r\n        a = b = 0;\r\n        int temp = 0;\r\n        boolean player = false;\r\n        String answer;\r\n        PairOfDice dices = new PairOfDice();\r\n        Scanner scanner = new Scanner(System.in);\r\n        System.out.println(\"Will Spieler 1 würfeln? (y/n)\");\r\n\r\n        while(a<100 || b<100){\r\n            if (!player){\r\n                dices.throwDice();\r\n                answer = scanner.next();\r\n                if (answer.equals(\"y\")){\r\n                    dices.throwDice();\r\n                    System.out.println(\"Spieler 1 hat \"+ dices.getPoints()+\" gewürfelt\");\r\n                    if (dices.isOne()){\r\n                        System.out.println(\"aber dabei eine Eins gewürfelt\");\r\n                        temp = 0;\r\n                        player = true;\r\n                    }\r\n                    else{\r\n                        temp+=dices.getPoints();\r\n                        System.out.println(\"Spieler 1 hat jetzt \"+a+temp+\" Punkte.\");\r\n                        System.out.println(\"nochmals würfeln (y/n)?\");\r\n                    }\r\n                }\r\n                else if (answer.equals(\"n\")){\r\n                    a+=temp;\r\n                    System.out.println(\"Spieler 1 hat jetzt \"+a+\" Punkte.\");\r\n                    System.out.println(\"Spieler 2, willst du würfeln? (y/n)\");\r\n                    player = true;\r\n                }\r\n            }\r\n            if (player){\r\n                dices.throwDice();\r\n                answer = scanner.next();\r\n                if (answer.equals(\"y\")){\r\n                    dices.throwDice();\r\n                    System.out.println(\"Spieler 2 hat \"+ dices.getPoints()+\" gewürfelt\");\r\n                    if (dices.isOne()){\r\n                        System.out.println(\"aber dabei eine Eins gewürfelt\");\r\n                        System.out.println(\"Spieler 2:\");\r\n                        temp = 0;\r\n                        player = false;\r\n                    }\r\n                    else{\r\n                        temp+=dices.getPoints();\r\n                        System.out.println(\"Spieler 2 hat jetzt \"+b+temp+\" Punkte.\");\r\n                        System.out.println(\"nochmals würfeln (y/n)?\");\r\n                    }\r\n                }\r\n                else if (answer.equals(\"n\")){\r\n                    a+=temp;\r\n                    System.out.println(\"Spieler 2 hat jetzt \"+b+\" Punkte.\");\r\n                    System.out.println(\"Spieler 1, willst du würfeln? (y/n)\");\r\n                    player = false;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Pig.java b/src/Pig.java
+--- a/src/Pig.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/Pig.java	(date 1667199209090)
+@@ -1,3 +1,5 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ import java.util.Objects;
+ import java.util.Scanner;
+ 
+@@ -18,15 +20,16 @@
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Will Spieler 1 würfeln? (y/n)");
+ 
+-        while(a<100 || b<100){
++        while(a<20 || b<20){
+             if (!player){
+                 dices.throwDice();
+                 answer = scanner.next();
+                 if (answer.equals("y")){
+                     dices.throwDice();
+                     System.out.println("Spieler 1 hat "+ dices.getPoints()+" gewürfelt");
+-                    if (dices.isOne()){
++                    if (isOne(dices)){
+                         System.out.println("aber dabei eine Eins gewürfelt");
++                        System.out.println("Spieler 2 zum Würfeln y eingeben");
+                         temp = 0;
+                         player = true;
+                     }
+@@ -38,6 +41,7 @@
+                 }
+                 else if (answer.equals("n")){
+                     a+=temp;
++                    temp=0;
+                     System.out.println("Spieler 1 hat jetzt "+a+" Punkte.");
+                     System.out.println("Spieler 2, willst du würfeln? (y/n)");
+                     player = true;
+@@ -49,9 +53,9 @@
+                 if (answer.equals("y")){
+                     dices.throwDice();
+                     System.out.println("Spieler 2 hat "+ dices.getPoints()+" gewürfelt");
+-                    if (dices.isOne()){
++                    if (isOne(dices)){
+                         System.out.println("aber dabei eine Eins gewürfelt");
+-                        System.out.println("Spieler 2:");
++                        System.out.println("Spieler 1 zum würfeln y eingeben");
+                         temp = 0;
+                         player = false;
+                     }
+@@ -63,6 +67,7 @@
+                 }
+                 else if (answer.equals("n")){
+                     a+=temp;
++                    temp=0;
+                     System.out.println("Spieler 2 hat jetzt "+b+" Punkte.");
+                     System.out.println("Spieler 1, willst du würfeln? (y/n)");
+                     player = false;
+@@ -70,4 +75,7 @@
+             }
+         }
+     }
++    public static boolean isOne(PairOfDice p){
++        return p.getDice1().getPoints() == 1 || p.getDice2().getPoints() == 1;
++    }
+ }
+Index: src/CoinTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class CoinTest {\r\n    public static void main(String[] args) {\r\n        Coin euro = new Coin(false);\r\n        Coin pound = new Coin(false);\r\n        System.out.println(euro.equals(pound));\r\n        System.out.println(euro==pound);\r\n        System.out.println(euro.toString()+pound.toString());\r\n\r\n\r\n        Coin muenze1 = new Coin();\r\n        Coin muenze2 = new Coin();\r\n        boolean[] muenze13 = new boolean[3];\r\n        boolean[] muenze23 = new boolean[3];\r\n        //ACHTUNG METHODE FALSCH sie schaut ob Kopf ODER Zahl 3 mal hintereinander vorkommt, in der Aufgabe muss man nur\r\n        //nach Kopf filtern\r\n        //TODO Fixen\r\n        //Runde 1\r\n        System.out.println(\"        Player 1   Player 2\");\r\n        System.out.println(\"Runde 1: \"+muenze1.toString()+\"     \"+muenze2.toString());\r\n        muenze13[0]=muenze1.getSide();\r\n        muenze23[0]=muenze2.getSide();\r\n\r\n        //Runde 2\r\n        muenze1.setSide(Coin.flip());\r\n        muenze13[1]=muenze1.getSide();\r\n        muenze2.setSide(Coin.flip());\r\n        muenze23[1]=muenze2.getSide();\r\n        System.out.println(\"Runde 2: \"+muenze1.toString()+\"     \"+muenze2.toString());\r\n\r\n        //Runde 3\r\n        muenze1.setSide(Coin.flip());\r\n        muenze13[2]=muenze1.getSide();\r\n        muenze2.setSide(Coin.flip());\r\n        muenze23[2]=muenze2.getSide();\r\n        System.out.println(\"Runde 3: \"+muenze1.toString()+\"     \"+muenze2.toString());\r\n\r\n        int laufvariable = 4;\r\n        while(true){\r\n            if (hasWon(muenze13) && hasWon(muenze23)){\r\n                System.out.println(\"beide Spieler haben gewonnen\");\r\n                break;\r\n            }\r\n            else if (hasWon(muenze13)){\r\n                System.out.println(\"p1 hat gewonnen\");\r\n                break;\r\n            }\r\n            else if (hasWon(muenze23)){\r\n                System.out.println(\"p2 hat gewonnen\");\r\n                break;\r\n            }\r\n            else {\r\n                for (int i = 0; i < 2; i++) {\r\n                    muenze13[i] = muenze13[i + 1];\r\n                    muenze23[i] = muenze23[i + 1];\r\n                }\r\n                muenze1.setSide(Coin.flip());\r\n                muenze13[2] = muenze1.getSide();\r\n                muenze2.setSide(Coin.flip());\r\n                muenze23[2] = muenze2.getSide();\r\n                System.out.println(\"Runde \" + laufvariable + \": \" + muenze1.toString() + \"     \" + muenze2.toString());\r\n                laufvariable++;\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n        public static boolean hasWon(boolean[] arr){\r\n            return arr[0] == arr[1] && arr[1] == arr[2];\r\n        }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CoinTest.java b/src/CoinTest.java
+--- a/src/CoinTest.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/CoinTest.java	(date 1667198541255)
+@@ -1,70 +1,12 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ public class CoinTest {
+     public static void main(String[] args) {
+         Coin euro = new Coin(false);
+         Coin pound = new Coin(false);
+         System.out.println(euro.equals(pound));
+-        System.out.println(euro==pound);
+-        System.out.println(euro.toString()+pound.toString());
++        System.out.println(euro == pound);
++        System.out.println(euro.toString() + pound.toString());
+ 
+-
+-        Coin muenze1 = new Coin();
+-        Coin muenze2 = new Coin();
+-        boolean[] muenze13 = new boolean[3];
+-        boolean[] muenze23 = new boolean[3];
+-        //ACHTUNG METHODE FALSCH sie schaut ob Kopf ODER Zahl 3 mal hintereinander vorkommt, in der Aufgabe muss man nur
+-        //nach Kopf filtern
+-        //TODO Fixen
+-        //Runde 1
+-        System.out.println("        Player 1   Player 2");
+-        System.out.println("Runde 1: "+muenze1.toString()+"     "+muenze2.toString());
+-        muenze13[0]=muenze1.getSide();
+-        muenze23[0]=muenze2.getSide();
+-
+-        //Runde 2
+-        muenze1.setSide(Coin.flip());
+-        muenze13[1]=muenze1.getSide();
+-        muenze2.setSide(Coin.flip());
+-        muenze23[1]=muenze2.getSide();
+-        System.out.println("Runde 2: "+muenze1.toString()+"     "+muenze2.toString());
+-
+-        //Runde 3
+-        muenze1.setSide(Coin.flip());
+-        muenze13[2]=muenze1.getSide();
+-        muenze2.setSide(Coin.flip());
+-        muenze23[2]=muenze2.getSide();
+-        System.out.println("Runde 3: "+muenze1.toString()+"     "+muenze2.toString());
+-
+-        int laufvariable = 4;
+-        while(true){
+-            if (hasWon(muenze13) && hasWon(muenze23)){
+-                System.out.println("beide Spieler haben gewonnen");
+-                break;
+-            }
+-            else if (hasWon(muenze13)){
+-                System.out.println("p1 hat gewonnen");
+-                break;
+-            }
+-            else if (hasWon(muenze23)){
+-                System.out.println("p2 hat gewonnen");
+-                break;
+-            }
+-            else {
+-                for (int i = 0; i < 2; i++) {
+-                    muenze13[i] = muenze13[i + 1];
+-                    muenze23[i] = muenze23[i + 1];
+-                }
+-                muenze1.setSide(Coin.flip());
+-                muenze13[2] = muenze1.getSide();
+-                muenze2.setSide(Coin.flip());
+-                muenze23[2] = muenze2.getSide();
+-                System.out.println("Runde " + laufvariable + ": " + muenze1.toString() + "     " + muenze2.toString());
+-                laufvariable++;
+-            }
+-        }
+-
+     }
+-
+-        public static boolean hasWon(boolean[] arr){
+-            return arr[0] == arr[1] && arr[1] == arr[2];
+-        }
+-}
++}
+\ No newline at end of file
+Index: src/PairOfDice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class PairOfDice {\r\n    private Dice dice1, dice2;\r\n\r\n    public PairOfDice(){\r\n        this.dice1 = new Dice();\r\n        this.dice2 = new Dice();\r\n    }\r\n    public void throwDice(){\r\n        dice1.roll();\r\n        dice2.roll();\r\n    }\r\n    public int getPoints(){\r\n        return dice1.getPoints()+ dice2.getPoints();\r\n    }\r\n    public boolean isOne(){\r\n        return dice1.getPoints()==1||dice2.getPoints()==1;\r\n    }\r\n    public Dice getDice1() {\r\n        return dice1;\r\n    }\r\n\r\n    public void setDice1(Dice dice1) {\r\n        this.dice1 = dice1;\r\n    }\r\n\r\n    public Dice getDice2() {\r\n        return dice2;\r\n    }\r\n\r\n    public void setDice2(Dice dice2) {\r\n        this.dice2 = dice2;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PairOfDice.java b/src/PairOfDice.java
+--- a/src/PairOfDice.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/PairOfDice.java	(date 1667198988265)
+@@ -1,3 +1,5 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ public class PairOfDice {
+     private Dice dice1, dice2;
+ 
+@@ -12,9 +14,6 @@
+     public int getPoints(){
+         return dice1.getPoints()+ dice2.getPoints();
+     }
+-    public boolean isOne(){
+-        return dice1.getPoints()==1||dice2.getPoints()==1;
+-    }
+     public Dice getDice1() {
+         return dice1;
+     }
+Index: src/Dice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Random;\r\n\r\npublic class Dice {\r\n\r\n\t// maximale Punktezahl des Wrfels\r\n\tpublic final int MAX = 6;\r\n\r\n\t// aktuelle Punktezahl des Wrfels\r\n\tprivate int points;\r\n\r\n\t// Objekt zur Erzeugung von Zufallszahlen\r\n\tprivate Random randomGenerator;\r\n\r\n\t/**\r\n\t * instanziiert einen neuen Wrfel und initialisiert die Variablen\r\n\t */\r\n\tpublic Dice() {\r\n\t\tthis.randomGenerator = new Random();\r\n\t\tthis.points = 1;\r\n\t}\r\n\r\n\t/**\r\n\t * \"wirft\" den Wrfel (setzt die Punktezahl auf eine zufllige, gltige Zahl)\r\n\t */\r\n\tpublic int roll() {\r\n\t\tthis.points = this.randomGenerator.nextInt(MAX) + 1;\r\n\t\treturn this.points;\r\n\t}\r\n\r\n\t/**\r\n\t * setzt die aktuelle Punktezahl des Wrfels auf den bergebenen Wert\r\n\t */\r\n\tpublic void setPoints(int points) {\r\n\t\tif (points >= 1 && points <= MAX)\r\n\t\t\tthis.points = points;\r\n\t\telse\r\n\t\t\tthis.printMessage(\"Unzulssige Eingabe. \" + \"Wrfel wird nicht verndert.\");\r\n\t}\r\n\r\n\t/**\r\n\t * gibt die aktuelle Punktezahl des Wrfels zurck\r\n\t */\r\n\tpublic int getPoints() {\r\n\t\treturn this.points;\r\n\t}\r\n\r\n\t/**\r\n\t * gibt eine Systemmeldung aus\r\n\t */\r\n\tprivate void printMessage(String message) {\r\n\t\tSystem.out.println(message);\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Dice.java b/src/Dice.java
+--- a/src/Dice.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/Dice.java	(date 1667198759104)
+@@ -1,18 +1,20 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ import java.util.Random;
+ 
+ public class Dice {
+ 
+-	// maximale Punktezahl des Wrfels
++	// maximale Punktezahl des Wuerfels
+ 	public final int MAX = 6;
+ 
+-	// aktuelle Punktezahl des Wrfels
++	// aktuelle Punktezahl des Wuerfels
+ 	private int points;
+ 
+ 	// Objekt zur Erzeugung von Zufallszahlen
+-	private Random randomGenerator;
++	private final Random randomGenerator;
+ 
+ 	/**
+-	 * instanziiert einen neuen Wrfel und initialisiert die Variablen
++	 * instanziiert einen neuen Wuerfel und initialisiert die Variablen
+ 	 */
+ 	public Dice() {
+ 		this.randomGenerator = new Random();
+@@ -20,7 +22,7 @@
+ 	}
+ 
+ 	/**
+-	 * "wirft" den Wrfel (setzt die Punktezahl auf eine zufllige, gltige Zahl)
++	 * "wirft" den Wuerfel (setzt die Punktezahl auf eine zufaellige, gluetige Zahl)
+ 	 */
+ 	public int roll() {
+ 		this.points = this.randomGenerator.nextInt(MAX) + 1;
+@@ -28,7 +30,7 @@
+ 	}
+ 
+ 	/**
+-	 * setzt die aktuelle Punktezahl des Wrfels auf den bergebenen Wert
++	 * setzt die aktuelle Punktezahl des Wuerfels auf den bergebenen Wert
+ 	 */
+ 	public void setPoints(int points) {
+ 		if (points >= 1 && points <= MAX)
+@@ -38,7 +40,7 @@
+ 	}
+ 
+ 	/**
+-	 * gibt die aktuelle Punktezahl des Wrfels zurck
++	 * gibt die aktuelle Punktezahl des Wuerfels zurueck
+ 	 */
+ 	public int getPoints() {
+ 		return this.points;
+Index: src/PairOfDiceTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class PairOfDiceTest {\r\n    public static void main(String[] args) {\r\n        PairOfDice pair = new PairOfDice();\r\n        System.out.println(pair.getPoints());\r\n        pair.throwDice();\r\n        System.out.println(pair.getPoints());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PairOfDiceTest.java b/src/PairOfDiceTest.java
+--- a/src/PairOfDiceTest.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/PairOfDiceTest.java	(date 1667198541205)
+@@ -1,3 +1,5 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ public class PairOfDiceTest {
+     public static void main(String[] args) {
+         PairOfDice pair = new PairOfDice();
+Index: src/Coin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Random;\r\n\r\npublic class Coin {\r\n    private boolean side; //true = head, false = tails\r\n    public Coin(){\r\n        this.side = flip();\r\n    }\r\n    public Coin(boolean side){\r\n        this.side = side;\r\n    }\r\n\r\n    public boolean getSide() {\r\n        return side;\r\n    }\r\n    public void setSide(boolean b){\r\n        this.side=b;\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (o == null || getClass() != o.getClass()) return false;\r\n        Coin coin = (Coin) o;\r\n        return getSide() == coin.getSide();\r\n    }\r\n    @Override\r\n    public String toString(){\r\n        return side ? \"Kopf\" : \"Zahl\";\r\n    }\r\n\r\n    public static boolean flip(){\r\n        Random rand = new Random();\r\n        return rand.nextInt(2)==1;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Coin.java b/src/Coin.java
+--- a/src/Coin.java	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/src/Coin.java	(date 1667198541230)
+@@ -1,3 +1,5 @@
++//Abdihakin Sahal Omar 20-947-107
++//Manuel Flückiger 22-112-502
+ import java.util.Random;
+ 
+ public class Coin {
+Index: src/CoinRace.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CoinRace.java b/src/CoinRace.java
+new file mode 100644
+--- /dev/null	(date 1667198541242)
++++ b/src/CoinRace.java	(date 1667198541242)
+@@ -0,0 +1,67 @@
++public class CoinRace {
++    public static void main(String[] args) {
++
++        Coin muenze1 = new Coin();
++        Coin muenze2 = new Coin();
++        boolean[] muenze13 = new boolean[3];
++        boolean[] muenze23 = new boolean[3];
++        //Die Methode um die Gewinnbedingung zu prüfen kann ausgewechselt werden, mit der Methode
++        //hasWonAdvanced, um auch 3-mal Zahl als gewonnen zu zählen
++        //Runde 1
++        System.out.println("        Player 1   Player 2");
++        System.out.println("Runde 1: "+muenze1.toString()+"     "+muenze2.toString());
++        muenze13[0]=muenze1.getSide();
++        muenze23[0]=muenze2.getSide();
++
++        //Runde 2
++        muenze1.setSide(Coin.flip());
++        muenze13[1]=muenze1.getSide();
++        muenze2.setSide(Coin.flip());
++        muenze23[1]=muenze2.getSide();
++        System.out.println("Runde 2: "+muenze1.toString()+"     "+muenze2.toString());
++
++        //Runde 3
++        muenze1.setSide(Coin.flip());
++        muenze13[2]=muenze1.getSide();
++        muenze2.setSide(Coin.flip());
++        muenze23[2]=muenze2.getSide();
++        System.out.println("Runde 3: "+muenze1.toString()+"     "+muenze2.toString());
++
++        int laufvariable = 4;
++        while(true){
++            if (hasWon(muenze13) && hasWon(muenze23)){
++                System.out.println("beide Spieler haben gewonnen");
++                break;
++            }
++            else if (hasWon(muenze13)){
++                System.out.println("p1 hat gewonnen");
++                break;
++            }
++            else if (hasWon(muenze23)){
++                System.out.println("p2 hat gewonnen");
++                break;
++            }
++            else {
++                for (int i = 0; i < 2; i++) {
++                    muenze13[i] = muenze13[i + 1];
++                    muenze23[i] = muenze23[i + 1];
++                }
++                muenze1.setSide(Coin.flip());
++                muenze13[2] = muenze1.getSide();
++                muenze2.setSide(Coin.flip());
++                muenze23[2] = muenze2.getSide();
++                System.out.println("Runde " + laufvariable + ": " + muenze1.toString() + "     " + muenze2.toString());
++                laufvariable++;
++            }
++        }
++
++    }
++
++    public static boolean hasWon(boolean[] arr){
++        return arr[0] && arr[1] && arr[2];
++    }
++    public static boolean hasWonadvanced(boolean[] arr){ //Falls die Gewinnbedingung einfach 3 mal dasselbe ist
++        return arr[0] == arr[1] && arr[1] == arr[2];
++    }
++}
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2\" name=\"Changes\" comment=\"TheorieAufgaben gelösst\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Coin.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Coin.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/CoinTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/CoinTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Gl0BkKFUA7bzucvnPN7OuS60If\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/manue/OneDrive/Dokumente/_Uni/Informatik/Programmieren1/Serie4/src&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\manue\\OneDrive\\Dokumente\\_Uni\\Informatik\\Programmieren1\\Serie4\\src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.CoinTest\">\r\n    <configuration name=\"CoinRace\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CoinRace\" />\r\n      <module name=\"Serie4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CoinTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CoinTest\" />\r\n      <module name=\"Serie4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PairOfDiceTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"PairOfDiceTest\" />\r\n      <module name=\"Serie4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Pig\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Pig\" />\r\n      <module name=\"Serie4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TheorieAufgaben\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TheorieAufgaben\" />\r\n      <module name=\"Serie4\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.CoinTest\" />\r\n        <item itemvalue=\"Application.CoinRace\" />\r\n        <item itemvalue=\"Application.Pig\" />\r\n        <item itemvalue=\"Application.TheorieAufgaben\" />\r\n        <item itemvalue=\"Application.PairOfDiceTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2\" name=\"Changes\" comment=\"\" />\r\n      <created>1666947733045</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666947733045</updated>\r\n      <workItem from=\"1666947734941\" duration=\"8364000\" />\r\n      <workItem from=\"1666958430078\" duration=\"4506000\" />\r\n      <workItem from=\"1666966121573\" duration=\"1049000\" />\r\n      <workItem from=\"1666986177718\" duration=\"330000\" />\r\n      <workItem from=\"1666994502369\" duration=\"1540000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"CoinTest now works\">\r\n      <created>1666955581253</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666955581253</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"CoinTest now proper indent (big fix)\">\r\n      <created>1666955931542</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666955931542</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung...\">\r\n      <created>1666957564939</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666957564939</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"TheorieAufgaben gelösst\">\r\n      <created>1666960841661</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666960841661</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"CoinTest now works\" />\r\n    <MESSAGE value=\"CoinTest now proper indent (big fix)\" />\r\n    <MESSAGE value=\"TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung...\" />\r\n    <MESSAGE value=\"TheorieAufgaben erweitert, Pig Klasse erstellt\" />\r\n    <MESSAGE value=\"TheorieAufgaben gelösst\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"TheorieAufgaben gelösst\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a4a7c8b9f5d3d5ebea7156cb243ef432a6052548)
++++ b/.idea/workspace.xml	(date 1667199305729)
+@@ -1,10 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="TheorieAufgaben gelösst">
++    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="CoinRace gefixt, eigene Klasse dafür gemacht.&#10;isOne Methode von Klasse PairOfDice zu Pig bewegt.&#10;kleine weitere updates zu pig">
++      <change afterPath="$PROJECT_DIR$/src/CoinRace.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coin.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/CoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoinTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/PairOfDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/PairOfDiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDiceTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -46,7 +52,7 @@
+       <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.CoinTest">
++  <component name="RunManager" selected="Application.Pig">
+     <configuration name="CoinRace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CoinRace" />
+       <module name="Serie4" />
+@@ -61,22 +67,22 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PairOfDiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="PairOfDiceTest" />
++    <configuration name="Pig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Pig" />
+       <module name="Serie4" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Pig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Pig" />
++    <configuration name="TheorieAufgaben" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="TheorieAufgaben" />
+       <module name="Serie4" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="TheorieAufgaben" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="TheorieAufgaben" />
++    <configuration name="quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="quiz" />
+       <module name="Serie4" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -84,11 +90,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.Pig" />
+         <item itemvalue="Application.CoinTest" />
+         <item itemvalue="Application.CoinRace" />
+-        <item itemvalue="Application.Pig" />
++        <item itemvalue="Application.quiz" />
+         <item itemvalue="Application.TheorieAufgaben" />
+-        <item itemvalue="Application.PairOfDiceTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -104,7 +110,9 @@
+       <workItem from="1666958430078" duration="4506000" />
+       <workItem from="1666966121573" duration="1049000" />
+       <workItem from="1666986177718" duration="330000" />
+-      <workItem from="1666994502369" duration="1540000" />
++      <workItem from="1666994502369" duration="1712000" />
++      <workItem from="1667037077550" duration="257000" />
++      <workItem from="1667198006694" duration="1287000" />
+     </task>
+     <task id="LOCAL-00001" summary="CoinTest now works">
+       <created>1666955581253</created>
+@@ -134,7 +142,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666960841661</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Missverständnis der Implementation 1! wird verbessert">
++      <created>1666996128773</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1666996128773</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert">
++      <created>1666996214151</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1666996214151</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -157,6 +179,8 @@
+     <MESSAGE value="TheorieAufgaben sind besser aufgeschrieben, Pair of Dice Klasse erstellt und erste Testfunktion.&#10;TODO: ü,ä ersetzen. File von Vorlesunge enthällt komische encodierung..." />
+     <MESSAGE value="TheorieAufgaben erweitert, Pig Klasse erstellt" />
+     <MESSAGE value="TheorieAufgaben gelösst" />
+-    <option name="LAST_COMMIT_MESSAGE" value="TheorieAufgaben gelösst" />
++    <MESSAGE value="Missverständnis der Implementation 1! wird verbessert" />
++    <MESSAGE value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
++    <option name="LAST_COMMIT_MESSAGE" value="Missverständnis der Implementation 1! wird verbessert&#10;Bestehender Cointest verbessert" />
+   </component>
+ </project>
+\ No newline at end of file
