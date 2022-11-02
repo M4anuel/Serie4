@@ -13,9 +13,9 @@ public class TheorieAufgaben {
         theorie1(10, 11);
         System.out.print("\nd)");
         theorie1(10, 12);
-        System.out.println("\ne)");
+        System.out.print("\ne)");
         theorie1(10, 13);
-        System.out.println("Aufgabe 2");
+        System.out.println("\nAufgabe 2");
         System.out.println(gregorianYear(400));
         System.out.println("\nAufgabe 3");
         System.out.println(isIsosceles(3, 3, 2));
