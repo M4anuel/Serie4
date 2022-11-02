@@ -27,12 +27,7 @@ public class Player {
      * simuliert Zug eines spielers und wendet je nachdem, ob es ein Computer ist oder nicht, die passende Methode an
      */
     public void turn(PairOfDice dices, boolean isComputer){
-        if (!isComputer) {
-            this.addPoints(this.piggyBack(dices, false));
-        }
-        else {
-            this.addPoints(this.piggyBack(dices, true));
-        }
+        this.addPoints(this.piggyBack(dices, isComputer));
     }
     /**
      * sollte der Player ein "echter" Spieler sein, muss dieser sagen, ob er würfeln möchte oder nicht.
