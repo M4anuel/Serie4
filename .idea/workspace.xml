@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig geht">
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -113,7 +113,7 @@
       <workItem from="1667372880023" duration="433000" />
       <workItem from="1667376031661" duration="1576000" />
       <workItem from="1667383604693" duration="339000" />
-      <workItem from="1667384106261" duration="1987000" />
+      <workItem from="1667384106261" duration="3356000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -185,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667376807843</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus">
+      <created>1667386376830</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667386376830</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +221,7 @@
     <MESSAGE value="Pig Spiel geht nicht&#10;Player ist Hilfsklasse für dieses Spiel" />
     <MESSAGE value="Pig sollte jetzt gehen" />
     <MESSAGE value="Pig geht" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pig geht" />
+    <MESSAGE value="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Player {
     private String name;
     private int points = 0;
@@ -27,5 +29,10 @@ public class Player {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 }
