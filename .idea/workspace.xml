@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Antworten noch als .tex file geaddet&#10;Player Klasse gefixt">
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +116,7 @@
       <workItem from="1667383604693" duration="339000" />
       <workItem from="1667384106261" duration="9405000" />
       <workItem from="1667394505229" duration="76000" />
-      <workItem from="1667394601051" duration="1341000" />
+      <workItem from="1667394601051" duration="2489000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -237,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667395776539</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Antworten noch als .tex file geaddet&#10;Player Klasse gefixt">
+      <created>1667396245024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667396245024</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
