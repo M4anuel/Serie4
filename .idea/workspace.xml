@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig ist mehr nach Java Konvention geschrieben">
+    <list default="true" id="5f92ff15-ea68-400f-b8a7-c0a6e2f6f6d2" name="Changes" comment="Pig Kommentare verbessert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PairOfDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PairOfDice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheorieAufgaben.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheorieAufgaben.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
       <recent name="C:\Users\manue\OneDrive\Dokumente\_Uni\Informatik\Programmieren1\Serie4\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Pig">
+  <component name="RunManager" selected="Application.TheorieAufgaben">
     <configuration name="CoinTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoinTest" />
       <module name="Serie4" />
@@ -85,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Pig" />
         <item itemvalue="Application.TheorieAufgaben" />
+        <item itemvalue="Application.Pig" />
         <item itemvalue="Application.TestPig" />
         <item itemvalue="Application.PigGame" />
         <item itemvalue="Application.CoinTest" />
@@ -114,7 +112,7 @@
       <workItem from="1667372880023" duration="433000" />
       <workItem from="1667376031661" duration="1576000" />
       <workItem from="1667383604693" duration="339000" />
-      <workItem from="1667384106261" duration="7892000" />
+      <workItem from="1667384106261" duration="9265000" />
     </task>
     <task id="LOCAL-00001" summary="CoinTest now works">
       <created>1666955581253</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667390558526</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Pig Kommentare verbessert">
+      <created>1667392090699</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667392090699</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +243,7 @@
     <MESSAGE value="Pig geht" />
     <MESSAGE value="Pig ist voll funktionsfähig, mit 1&amp;2 Spieler modus" />
     <MESSAGE value="Pig ist mehr nach Java Konvention geschrieben" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pig ist mehr nach Java Konvention geschrieben" />
+    <MESSAGE value="Pig Kommentare verbessert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pig Kommentare verbessert" />
   </component>
 </project>

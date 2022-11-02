@@ -48,11 +48,11 @@ public class TheorieAufgaben {
             System.out.print("8 ");
         }
     }
-    public static boolean isIsosceles(int x, int y, int z){
-        return (!(x == y && y == z ) && (x == y || y == z || z == x ));
-    }
     public static boolean gregorianYear(int year){
         return (year%4==0&&(year%100!=0||year%400==0));
+    }
+    public static boolean isIsosceles(int x, int y, int z){
+        return (!(x == y && y == z ) && (x == y || y == z || z == x ));
     }
     public static int count(String name, char c){
         return name.length()==0 ? 0 : (name.charAt(0)==c ? 1 : 0) + count(name.substring(1),c);
