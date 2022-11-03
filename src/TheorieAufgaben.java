@@ -49,6 +49,10 @@ public class TheorieAufgaben {
         }
     }
     public static boolean gregorianYear(int year){
+        if(year<1583){
+            System.out.println("Der Kalender war noch nicht geboren");
+            return false;
+        }
         return (year%4==0&&(year%100!=0||year%400==0));
     }
     public static boolean isIsosceles(int x, int y, int z){
